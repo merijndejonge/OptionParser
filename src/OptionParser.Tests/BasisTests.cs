@@ -4,16 +4,17 @@ using OpenSoftware.OptionParsing;
 
 namespace OptionParsing.Tests
 {
-    public class BasicOptionParser: OptionParser
+    internal class BasicOptionParser : OptionParser
     {
-        public override string Name => "Name="+nameof(BasicOptionParser);
-        public override string Description => "Description="+nameof(BasicOptionParser);
+        public override string Name => nameof(Name) + "=" + nameof(BasicOptionParser);
+        public override string Description => nameof(Description) + "=" + nameof(BasicOptionParser);
 
-        [Option(Description = "MyIntOption", Name = "--int-option", ShortName = "-i", DefaultValue = "3" )]
+        [Option(Description = nameof(MyIntOption), Name = "--int-option", ShortName = "-i", DefaultValue = "3")]
         public IntOption MyIntOption { get; set; }
 
-        [Option(Description = "RequiredOption", Name = "--required-option", ShortName = "-r", IsRequired = true)]
-        public BoolOption MyRequiredOption{ get; set; }
+        [Option(Description = nameof(MyRequiredOption), Name = "--required-option", ShortName = "-r",
+            IsRequired = true)]
+        public BoolOption MyRequiredOption { get; set; }
     }
 
     [TestClass]
@@ -33,13 +34,14 @@ namespace OptionParsing.Tests
             Assert.IsTrue(result.Contains("--required-option"));
             Assert.IsTrue(result.Contains("-r"));
         }
+
         [TestMethod]
         public void TestThatLongNameParsesCorrectly()
         {
             var options = new BasicOptionParser();
             options.Parse("--required-option");
 
-            Assert.IsTrue(options.MyRequiredOption.IsDefined );
+            Assert.IsTrue(options.MyRequiredOption.IsDefined);
         }
 
         [TestMethod]
@@ -54,8 +56,8 @@ namespace OptionParsing.Tests
         [TestMethod]
         public void TestForRequiredOptions()
         {
-                var options = new BasicOptionParser();
-                Assert.ThrowsException<SyntaxErrorException>(() => options.Parse());
+            var options = new BasicOptionParser();
+            Assert.ThrowsException<SyntaxErrorException>(() => options.Parse());
         }
 
         [TestMethod]
@@ -63,7 +65,7 @@ namespace OptionParsing.Tests
         {
             var options = new BasicOptionParser();
 
-            Assert.IsTrue(options.MyIntOption.DefaultValue == "3" );
+            Assert.IsTrue(options.MyIntOption.DefaultValue == "3");
         }
     }
 }
