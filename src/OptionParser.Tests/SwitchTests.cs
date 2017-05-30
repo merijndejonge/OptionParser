@@ -16,8 +16,12 @@ namespace OptionParsing.Tests
         public override string Name => "Name=" + nameof(SwitchOptionParser);
         public override string Description => "Description=" + nameof(SwitchOptionParser);
 
-        [Option(Description = "SwitchOptionTest", Name = "-s")]
-        public SwitchOption<SwitchValues> SwitchOption { get; set; }
+        [Option(Name="value1", EnumValue = nameof(SwitchValues.Value1))]
+        public SwitchOption<SwitchValues> SwitchOptionValue1 { get; set; }
+        [Option(Name = "value2", EnumValue = nameof(SwitchValues.Value2))]
+        public SwitchOption<SwitchValues> SwitchOptionValue2 { get; set; }
+
+        public SwitchValues SwitchValue => SwitchOption<SwitchValues>.GetValue();
     }
 
     [TestClass]
@@ -29,11 +33,20 @@ namespace OptionParsing.Tests
             var options = new SwitchOptionParser();
             const SwitchOptionParser.SwitchValues valueToTest = SwitchOptionParser.SwitchValues.Value2;
 
-            options.Parse("-s");
+            options.Parse(valueToTest.ToString().ToLower());
 
-            //Assert.IsTrue(options.SwitchOption.IsDefined);
-            //Assert.IsTrue(options.SwitchOption.Value == valueToTest);
-            //Assert.IsTrue(options.SwitchOption.Enumvalue == valueToTest.ToString());
+            var value = options.SwitchValue;
+
+            Assert.IsTrue(options.SwitchOptionValue2.IsDefined);
+            Assert.IsTrue(value == valueToTest);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(SyntaxErrorException))]
+        public void TestThatOnlyOneSwitchValueCanBeSet()
+        {
+            var options = new SwitchOptionParser();
+            options.Parse("value1", "value2");
         }
     }
 }

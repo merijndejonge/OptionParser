@@ -18,7 +18,13 @@ namespace OpenSoftware.OptionParsing
             SwitchValue.Clear();
         }
     }
-
+    /// <summary>
+    /// This class represents an option that selects a value from a collection of enum values defined by <typeparamref name="T"/> .
+    /// Multiple instances of this class can be used to reference different values of <typeparamref name="T"/>.
+    /// 
+    /// To access the selected enum value use the static method <c>SwitchOption&lt;T&gt;</c>.GetValue().
+    /// </summary>
+    /// <typeparam name="T">Specifies enum type that holds different switch values</typeparam>
     public class SwitchOption<T> : EnumOption<T>, ISwitchOption
         where T : struct
     {

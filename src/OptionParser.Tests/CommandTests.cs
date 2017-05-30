@@ -18,9 +18,11 @@ namespace OptionParsing.Tests
         [Option(Description = nameof(IntOption), Name = "-i")]
         public IntOption IntOption { get; set; }
 
-        [Option(Description = nameof(CommandOption), Name = nameof(CommandValues.Command2),
+        [Option(Description = nameof(Command2), Name = nameof(CommandValues.Command2),
             EnumValue = nameof(CommandValues.Command2))]
-        public CommandOption<CommandValues> CommandOption { get; set; }
+        public CommandOption<CommandValues> Command2 { get; set; }
+
+        public CommandValues CommandValue => SwitchOption<CommandValues>.GetValue();
     }
 
     [TestClass]
@@ -34,7 +36,8 @@ namespace OptionParsing.Tests
 
             options.Parse(commandToTest.ToString());
 
-            Assert.IsTrue(options.CommandOption.IsDefined);
+            Assert.IsTrue(options.Command2.IsDefined);
+            Assert.IsTrue(options.CommandValue == commandToTest);
         }
 
         [TestMethod]
@@ -45,7 +48,7 @@ namespace OptionParsing.Tests
 
             options.Parse(commandToTest.ToString(), "-i", "10");
 
-            Assert.IsTrue(options.CommandOption.IsDefined);
+            Assert.IsTrue(options.Command2.IsDefined);
             Assert.IsTrue(options.Arguments.Count == 2);
         }
     }
