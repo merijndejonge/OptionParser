@@ -8,13 +8,13 @@ namespace OptionParsing.Tests
         public override string Name => nameof(Name) + "=" + nameof(BasicTypesOptionParser);
         public override string Description => nameof(Description) + "=" + nameof(BasicTypesOptionParser);
 
-        [Option(Description = nameof(IntOption), Name = "-i")]
+        [Option(Description = nameof(IntOption), Name = "", ShortName = "-i")]
         public IntOption IntOption { get; set; }
 
-        [Option(Description = nameof(BoolOption), Name = "-b")]
+        [Option(Description = nameof(BoolOption), Name = "", ShortName = "-b")]
         public BoolOption BoolOption { get; set; }
 
-        [Option(Description = nameof(StringOption), Name = "-s")]
+        [Option(Description = nameof(StringOption), Name = "--source", ShortName = "-s")]
         public StringOption StringOption { get; set; }
     }
 

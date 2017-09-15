@@ -16,8 +16,9 @@ namespace OptionParsing.Tests
         public override string Name => "Name=" + nameof(SwitchOptionParser);
         public override string Description => "Description=" + nameof(SwitchOptionParser);
 
-        [Option(Name="value1", EnumValue = nameof(SwitchValues.Value1))]
+        [Option(Name = "value1", EnumValue = nameof(SwitchValues.Value1))]
         public SwitchOption<SwitchValues> SwitchOptionValue1 { get; set; }
+
         [Option(Name = "value2", EnumValue = nameof(SwitchValues.Value2))]
         public SwitchOption<SwitchValues> SwitchOptionValue2 { get; set; }
 
