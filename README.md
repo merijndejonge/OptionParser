@@ -2,7 +2,7 @@
 
 
 ## Description
-OptionParser is a small library that deals with option parsing and option handling for  command-line (CLI) programs.
+OptionParser is a library that deals with option parsing and option handling for  command-line (CLI) programs.
 
 Options are defined in a class that derives from `OptionParser`, where each option is declared as a property and has a type that derives from `Option`. Meta-information about the options (such as its name) are defined using attributes. The library comes with  multiple pre-defined option types, which will enable you to get started quickly. See below for a complete list of option types.
 
@@ -76,7 +76,9 @@ If the user does not specify the switch an exception is which you need to handle
 ## Advanced usage
 The library supports more advanced option handling than the getting-started example shows. For instance, it supports enum types,file options, as well as sub commands. The source code of `OptionParser` contain unit tests for each feature, demonstrating their usage.
 
-## The OptionParserclass
+## The OptionParser class
+
+The class `OptionParser` forms the base class of every option parser. 
 
 ## Option Metadata
 Metadata of optison is specifidd using the `OptionAttribute`. It has the following properties:
