@@ -37,7 +37,7 @@ namespace OpenSoftware.OptionParsing
             }
             internal set
             {
-                if(IsDefined)
+                if(RawValue != null)
                 {
                     throw new InvalidOptionValueException("You can only select a single value for a switch.");
                 }

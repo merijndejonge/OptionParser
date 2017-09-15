@@ -50,6 +50,32 @@ namespace OptionParsing.Tests
         }
 
         [TestMethod]
+        public void BoolRawValueTest()
+        {
+            var options = new BasicTypesOptionParser();
+
+            options.Parse();
+            Assert.IsTrue(options.BoolOption.RawValue == null);
+            Assert.IsFalse(options.BoolOption.IsDefined);
+            Assert.IsFalse(options.BoolOption.Value);
+
+            options.Parse("-b");
+            Assert.IsFalse(options.BoolOption.RawValue == null);
+            Assert.IsTrue(options.BoolOption.IsDefined);
+            Assert.IsTrue(options.BoolOption.Value);
+
+            options.Parse("-b", "true");
+            Assert.IsFalse(options.BoolOption.RawValue == null);
+            Assert.IsTrue(options.BoolOption.IsDefined);
+            Assert.IsTrue(options.BoolOption.Value);
+
+            options.Parse("-b", "false");
+            Assert.IsFalse(options.BoolOption.RawValue == null);
+            Assert.IsTrue(options.BoolOption.IsDefined);
+            Assert.IsFalse(options.BoolOption.Value);
+        }
+
+        [TestMethod]
         public void StringTest()
         {
             var options = new BasicTypesOptionParser();

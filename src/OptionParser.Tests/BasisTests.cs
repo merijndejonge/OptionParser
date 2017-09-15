@@ -66,6 +66,21 @@ namespace OptionParsing.Tests
             var options = new BasicOptionParser();
 
             Assert.IsTrue(options.MyIntOption.DefaultValue == "3");
+            Assert.IsTrue(options.MyIntOption.Value == 3);
+
+            options.Parse("--required-option");
+            Assert.IsFalse(options.MyIntOption.IsDefined);
+            Assert.IsTrue(options.MyIntOption.Value == 3);
+        }
+
+        [TestMethod]
+        public void TestThatSwitchOverridesDefaultValue()
+        {
+            var options = new BasicOptionParser();
+
+            options.Parse("--required-option", "-i", "5");
+            Assert.IsTrue(options.MyIntOption.IsDefined);
+            Assert.IsTrue(options.MyIntOption.Value == 5);
         }
     }
 }

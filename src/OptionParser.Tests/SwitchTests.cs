@@ -38,6 +38,7 @@ namespace OptionParsing.Tests
 
             var value = options.SwitchValue;
 
+            Assert.IsFalse(options.SwitchOptionValue1.IsDefined);
             Assert.IsTrue(options.SwitchOptionValue2.IsDefined);
             Assert.IsTrue(value == valueToTest);
         }

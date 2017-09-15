@@ -17,10 +17,5 @@
             }
             internal set => RawValue = value.ToString();
         }
-
-        /// <summary>
-        ///     Returns true if the option is specified on the command line, false otherwise.
-        /// </summary>
-        public override bool IsDefined => Value;
     }
 }

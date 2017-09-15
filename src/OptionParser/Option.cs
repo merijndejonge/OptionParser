@@ -58,7 +58,7 @@ namespace OpenSoftware.OptionParsing
         /// <summary>
         ///     Indicates whether this option is specified on the command line (or has its default value).
         /// </summary>
-        public virtual bool IsDefined => RawValue != null;
+        public bool IsDefined { get; internal set; }
 
         /// <summary>
         /// For enumeration-based options (e.g., SwitchOption and CommandOption) this attribute specifies the enum value to which this option corresponds
@@ -70,6 +70,10 @@ namespace OpenSoftware.OptionParsing
             if(option.DefaultValue != null)
             {
                 DefaultValue = option.DefaultValue;
+                if (IsDefined == false)
+                {
+                    RawValue = option.DefaultValue;
+                }
             }
             if(option.Description != null)
             {
