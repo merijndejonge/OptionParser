@@ -4,6 +4,16 @@
     <TargetFramework>netcoreapp1.1</TargetFramework>
     <AssemblyName>OpenSoftware.OptionParser</AssemblyName>
     <RootNamespace>OpenSoftware.OptionParsing</RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Merijn de Jonge</Authors>
+    <Company>OpenSoftware</Company>
+    <Description>OptionParser is a library that deals with option parsing and option handling for command-line (CLI) programs.</Description>
+    <PackageProjectUrl>https://github.com/merijndejonge/OptionParser</PackageProjectUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/merijndejonge/OptionParser.git</RepositoryUrl>
+    <PackageLicenseUrl>https://github.com/merijndejonge/OptionParser/blob/master/LICENSE</PackageLicenseUrl>
+    <Copyright>Merijn de Jonge</Copyright>
+    <PackageTags>cli option-parsing</PackageTags>
   </PropertyGroup>
 
 </Project>
