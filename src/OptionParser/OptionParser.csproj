@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp1.1</TargetFramework>
+    <TargetFrameworks>netcoreapp1.1;net45</TargetFrameworks>
     <AssemblyName>OpenSoftware.OptionParser</AssemblyName>
     <RootNamespace>OpenSoftware.OptionParsing</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -14,6 +14,7 @@
     <PackageLicenseUrl>https://github.com/merijndejonge/OptionParser/blob/master/LICENSE</PackageLicenseUrl>
     <Copyright>Merijn de Jonge</Copyright>
     <PackageTags>cli option-parsing</PackageTags>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
 </Project>
