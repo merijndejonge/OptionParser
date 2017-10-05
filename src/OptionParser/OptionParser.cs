@@ -52,8 +52,7 @@ namespace OpenSoftware.OptionParsing
         /// </summary>
         public List<Option> ProcessedOptions { get; private set; }
 
-        [Option(Name = "--help", ShortName = "/?", Description = "Shows this usage information.", DefaultValue = "false"
-            , Index = 999)]
+        [Option(Name = "--help", ShortName = "/?", Description = "Shows this usage information.", Index = 999)]
         public BoolOption Usage { get; set; }
 
         protected virtual string Copyright => null;
@@ -101,7 +100,7 @@ namespace OpenSoftware.OptionParsing
         /// </summary>
         protected virtual void ValidateArguments()
         {
-            if(Usage.IsDefined)
+            if(Usage.IsDefined || HasUnprocessedHelp())
             {
                 // Stop validation when '--help' switch is used 
                 return;
@@ -117,6 +116,10 @@ namespace OpenSoftware.OptionParsing
             }
         }
 
+        private bool HasUnprocessedHelp()
+        {
+            return Arguments.Any(x => x == "--help" || x == "/?");
+        }
         private void ProcessArguments()
         {
             while(Arguments.Count > 0)
