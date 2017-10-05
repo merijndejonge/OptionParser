@@ -11,7 +11,7 @@ namespace OpenSoftware.OptionParsing
         /// <summary>
         ///     Specifies the index in the help overview where this option should appear.
         /// </summary>
-        public int Index { get; set; }
+        public int Index { get; set; } = 998;
 
         /// <summary>
         ///     Specifies the name of the option (e.g., '--output').
