@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard1.5;net45</TargetFrameworks>
+    <TargetFrameworks>netcoreapp2.0;net45</TargetFrameworks>
     <AssemblyName>OpenSoftware.OptionParser</AssemblyName>
     <RootNamespace>OpenSoftware.OptionParsing</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -14,14 +14,9 @@
     <PackageLicenseUrl>https://github.com/merijndejonge/OptionParser/blob/master/LICENSE</PackageLicenseUrl>
     <Copyright>Merijn de Jonge</Copyright>
     <PackageTags>cli option-parsing</PackageTags>
-    <Version>1.1.1</Version>
+    <Version>1.1.4</Version>
+    <FileVersion>1.1.0.0</FileVersion>
   </PropertyGroup>
-
-  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard1.5'">
-    <PackageReference Include="System.Reflection.TypeExtensions">
-      <Version>4.4.0</Version>
-    </PackageReference>
-  </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Properties\PublishProfiles\" />
