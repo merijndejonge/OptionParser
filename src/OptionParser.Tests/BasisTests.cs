@@ -21,6 +21,25 @@ namespace OptionParsing.Tests
     public class BasisTests
     {
         [TestMethod]
+        public void TestThatUsesSwitchIsParsed()
+        {
+            var options = new BasicOptionParser();
+
+            options.Parse("--required-option");
+            Assert.IsFalse(options.Usage.IsDefined);
+
+            options.Parse("--required-option", "--help");
+            Assert.IsTrue(options.Usage.IsDefined);
+        }
+        [TestMethod]
+        public void TestThatUsesSwitchBypassesOptionValidation()
+        {
+            var options = new BasicOptionParser();
+
+            options.Parse("--help");
+            Assert.IsTrue(options.Usage.IsDefined);
+        }
+        [TestMethod]
         public void TestThatUsageContainsNameDescriptionLongNameAndShortName()
         {
             var options = new BasicOptionParser();
