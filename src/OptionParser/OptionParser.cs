@@ -190,7 +190,7 @@ namespace OpenSoftware.OptionParsing
         /// <param name="writer"></param>
         public void DisplayUsage(TextWriter writer)
         {
-            DisplayUsage(writer, Console.IsOutputRedirected ? 80 : Console.LargestWindowWidth);
+            DisplayUsage(writer, Console.IsOutputRedirected ? 80 : Console.WindowWidth);
         }
 
         /// <summary>
