@@ -54,7 +54,7 @@ namespace OpenSoftware.OptionParsing
 
         [Option(Name = "--help", ShortName = "/?", Description = "Shows this usage information.", DefaultValue = "false"
             , Index = 999)]
-        internal BoolOption Usage { get; set; }
+        public BoolOption Usage { get; set; }
 
         protected virtual string Copyright => null;
 
@@ -101,10 +101,10 @@ namespace OpenSoftware.OptionParsing
         /// </summary>
         protected virtual void ValidateArguments()
         {
-            if(Usage.Value)
+            if(Usage.IsDefined)
             {
-                DisplayUsage(Console.Error);
-                Environment.Exit(0);
+                // Stop validation when '--help' switch is used 
+                return;
             }
 
             // Check if all required options have been specified.
