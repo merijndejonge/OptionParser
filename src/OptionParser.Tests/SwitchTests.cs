@@ -1,5 +1,4 @@
-﻿using System.IO;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenSoftware.OptionParsing;
 
 namespace OptionParsing.Tests
@@ -11,7 +10,7 @@ namespace OptionParsing.Tests
             Value1,
             Value2,
             Value3
-        };
+        }
 
         public override string Name => "Name=" + nameof(SwitchOptionParser);
         public override string Description => "Description=" + nameof(SwitchOptionParser);
