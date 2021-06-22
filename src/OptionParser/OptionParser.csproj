@@ -1,7 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp2.0;net45</TargetFrameworks>
     <AssemblyName>OpenSoftware.OptionParser</AssemblyName>
     <RootNamespace>OpenSoftware.OptionParsing</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -11,15 +10,16 @@
     <PackageProjectUrl>https://github.com/merijndejonge/OptionParser</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/merijndejonge/OptionParser.git</RepositoryUrl>
-    <PackageLicenseUrl>https://github.com/merijndejonge/OptionParser/blob/master/LICENSE</PackageLicenseUrl>
     <Copyright>Merijn de Jonge</Copyright>
     <PackageTags>cli option-parsing</PackageTags>
     <Version>1.1.4</Version>
     <FileVersion>1.1.0.0</FileVersion>
+    <PackageVersion>1.1.6</PackageVersion>
+    <TargetFramework>netstandard2.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Properties\PublishProfiles\" />
+    <Folder Include="Properties" />
   </ItemGroup>
 
 </Project>
