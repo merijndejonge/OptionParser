@@ -105,6 +105,6 @@ namespace OpenSoftware.OptionParsing
     /// <typeparam name="T"></typeparam>
     public abstract class Option<T> : Option
     {
-        public abstract T Value { get; internal set; }
+        public abstract T Value { get; protected set; }
     }
 }
