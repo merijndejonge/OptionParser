@@ -3,7 +3,7 @@
     public class FileOption : StringOption
     {
         /// <summary>
-        /// Gets the file namename passed to this FolderOption or null if it wasn't specified.
+        /// Gets the file name passed to this FolderOption or null if it wasn't specified.
         /// </summary>
         public string FileName
         {

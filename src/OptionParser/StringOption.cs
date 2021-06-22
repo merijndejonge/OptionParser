@@ -11,7 +11,7 @@
         public override string Value
         {
             get => RawValue;
-            internal set => RawValue = value;
+            protected set => RawValue = value;
         }
     }
 }

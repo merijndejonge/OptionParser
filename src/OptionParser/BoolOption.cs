@@ -15,7 +15,7 @@
                 bool.TryParse(RawValue, out bool result);
                 return result;
             }
-            internal set => RawValue = value.ToString();
+            protected set => RawValue = value.ToString();
         }
     }
 }

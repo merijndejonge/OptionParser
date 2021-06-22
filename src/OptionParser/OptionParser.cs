@@ -140,7 +140,7 @@ namespace OpenSoftware.OptionParsing
 
                 if(cmdOption is ISwitchOption)
                 {
-                    TrySetValue(cmdOption, cmdOption.Enumvalue);
+                    TrySetValue(cmdOption, cmdOption.EnumValue);
                 }
                     // A boolean switch, e.g., '-v' can be specified as an unary switch '-v' or as a binary switch '-v [true|false]'
                 else if(cmdOption is BoolOption && (Arguments.Count == 1 || IsSwitch(Arguments[1])))
@@ -198,7 +198,7 @@ namespace OpenSoftware.OptionParsing
 
         /// <summary>
         ///     Writes application's usage information to the provided TextWriter. Output
-        ///     will be formatted gived the indicated width.
+        ///     will be formatted with the indicated width.
         /// </summary>
         /// <param name="writer"></param>
         /// <param name="width"></param>

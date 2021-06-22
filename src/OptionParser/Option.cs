@@ -31,7 +31,7 @@ namespace OpenSoftware.OptionParsing
         public string Name { get; private set; }
 
         /// <summary>
-        ///     Returns the abreviated name of this option.
+        ///     Returns the abbreviated name of this option.
         /// </summary>
         public string ShortName { get; private set; }
 
@@ -46,7 +46,7 @@ namespace OpenSoftware.OptionParsing
         public string DefaultValue { get; private set; }
 
         /// <summary>
-        ///     Gets the desription of this option.
+        ///     Gets the description of this option.
         /// </summary>
         public string Description { get; private set; }
 
@@ -63,7 +63,7 @@ namespace OpenSoftware.OptionParsing
         /// <summary>
         /// For enumeration-based options (e.g., SwitchOption and CommandOption) this attribute specifies the enum value to which this option corresponds
         /// </summary>
-        public string Enumvalue { get; set; }
+        public string EnumValue { get; set; }
 
         internal void SetValues(OptionAttribute option)
         {
@@ -93,14 +93,14 @@ namespace OpenSoftware.OptionParsing
             }
             if(option.EnumValue != null)
             {
-                Enumvalue = option.EnumValue;
+                EnumValue = option.EnumValue;
             }
             Index = option.Index;
         }
     }
 
     /// <summary>
-    ///     Abtract generic base class for option handling.
+    ///     Abstract generic base class for option handling.
     /// </summary>
     /// <typeparam name="T"></typeparam>
     public abstract class Option<T> : Option

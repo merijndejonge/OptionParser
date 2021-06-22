@@ -10,14 +10,13 @@ namespace OpenSoftware.OptionParsing
         {
             get
             {
-                T result;
-                if(Enum.TryParse(RawValue, true, out result) == false)
+                if(Enum.TryParse(RawValue, true, out T result) == false)
                 {
                     return default(T);
                 }
                 return result;
             }
-            internal set => RawValue = value.ToString();
+            protected set => RawValue = value.ToString();
         }
 
         #endregion
@@ -30,7 +29,7 @@ namespace OpenSoftware.OptionParsing
                 if (Enum.TryParse(value, true, out T _) == false)
                 {
                     var acceptedValues = string.Join(@""", """, Enum.GetNames(typeof(T)));
-                    throw new InvalidOptionValueException(String.Format(@"Accepted values are: ""{0}"".", acceptedValues));
+                    throw new InvalidOptionValueException($@"Accepted values are: ""{acceptedValues}"".");
                 }
                 base.RawValue = value;
             }

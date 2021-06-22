@@ -14,11 +14,10 @@ namespace OpenSoftware.OptionParsing
         {
             get
             {
-                int value;
-                int.TryParse(RawValue, out value);
+                int.TryParse(RawValue, out var value);
                 return value;
             }
-            internal set => RawValue = value.ToString(CultureInfo.InvariantCulture);
+            protected set => RawValue = value.ToString(CultureInfo.InvariantCulture);
         }
     }
 }
