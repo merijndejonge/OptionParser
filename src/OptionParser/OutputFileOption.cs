@@ -19,7 +19,7 @@ namespace OpenSoftware.OptionParsing
         public override string RawValue
         {
             get => base.RawValue;
-            internal set
+            protected set
             {
                 if(RawValue != value)
                 {

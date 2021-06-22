@@ -35,7 +35,7 @@ namespace OpenSoftware.OptionParsing
                 var thisType = typeof(T);
                 return SwitchValues.SwitchValue.ContainsKey(thisType) ? SwitchValues.SwitchValue[thisType] : null;
             }
-            internal set
+            protected set
             {
                 if(RawValue != null)
                 {

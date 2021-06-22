@@ -53,7 +53,7 @@ namespace OpenSoftware.OptionParsing
         /// <summary>
         ///     Gets the literal string value of the provided option value.
         /// </summary>
-        public virtual string RawValue { get; internal set; }
+        public virtual string RawValue { get; protected set; }
 
         /// <summary>
         ///     Indicates whether this option is specified on the command line (or has its default value).
@@ -96,6 +96,11 @@ namespace OpenSoftware.OptionParsing
                 EnumValue = option.EnumValue;
             }
             Index = option.Index;
+        }
+
+        internal void SetRawValue(string rawValue)
+        {
+            RawValue = rawValue;
         }
     }
 

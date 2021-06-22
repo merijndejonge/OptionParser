@@ -12,7 +12,7 @@
         {
             get
             {
-                bool.TryParse(RawValue, out bool result);
+                bool.TryParse(RawValue, out var result);
                 return result;
             }
             protected set => RawValue = value.ToString();

@@ -173,7 +173,7 @@ namespace OpenSoftware.OptionParsing
         {
             try
             {
-                cmdOption.RawValue = value;
+                cmdOption.SetRawValue(value);
                 cmdOption.IsDefined = true;
             }
             catch(InvalidOptionValueException e)
