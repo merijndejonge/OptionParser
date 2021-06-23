@@ -22,4 +22,8 @@
     <Folder Include="Properties" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Dawn.ValueString" Version="2.1.0" />
+  </ItemGroup>
+
 </Project>
