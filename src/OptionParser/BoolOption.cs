@@ -5,17 +5,5 @@
     /// </summary>
     public class BoolOption : Option<bool>
     {
-        /// <summary>
-        ///     Gets the value passed to this BoolOption or null if it wasn't specified.
-        /// </summary>
-        public override bool Value
-        {
-            get
-            {
-                bool.TryParse(RawValue, out var result);
-                return result;
-            }
-            protected set => RawValue = value.ToString();
-        }
     }
 }

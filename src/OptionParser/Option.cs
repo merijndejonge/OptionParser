@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using System.Reflection;
+using Dawn;
 
 namespace OpenSoftware.OptionParsing
 {
@@ -110,6 +111,19 @@ namespace OpenSoftware.OptionParsing
     /// <typeparam name="T"></typeparam>
     public abstract class Option<T> : Option
     {
-        public abstract T Value { get; protected set; }
+        public virtual T Value { get; protected set; }
+
+        public override string RawValue
+        {
+            get => Value?.ToString();
+            protected set
+            {
+                if (ValueString.Of(value).Is<T>(out var typedValue) == false)
+                {
+                    throw new SyntaxErrorException($"Invalid value {value} for type {typeof(T).Name}.");
+                }
+                Value = typedValue;
+            }
+        }
     }
 }

@@ -6,17 +6,12 @@ namespace OpenSoftware.OptionParsing
 {
     public class ListOption<T> : Option<List<T>>
     {
-        public override List<T> Value { get; protected set; }
-
-
         public override string RawValue
         {
             get
             {
                 var stringArray = Value.Select(x => x.ToString());
-
                 return string.Join(",", stringArray);
-
             }
             protected set
             {
@@ -28,7 +23,6 @@ namespace OpenSoftware.OptionParsing
                     {
                         throw new SyntaxErrorException($"Invalid value {stringValue} for type {typeof(T).Name}");
                     }
-
                     list.Add(result);
                 }
 
@@ -36,6 +30,6 @@ namespace OpenSoftware.OptionParsing
             }
         }
         private static bool TryParseValue(string stringValue, out T result) =>
-            ValueString.Of(stringValue).Is<T>(out result);
+            ValueString.Of(stringValue).Is(out result);
     }
 }

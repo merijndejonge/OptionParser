@@ -145,7 +145,7 @@ namespace OpenSoftware.OptionParsing
                     // A boolean switch, e.g., '-v' can be specified as an unary switch '-v' or as a binary switch '-v [true|false]'
                 else if(cmdOption is BoolOption && (Arguments.Count == 1 || IsSwitch(Arguments[1])))
                 {
-                    TrySetValue(cmdOption, bool.TrueString);
+                    TrySetValue(cmdOption, true.ToString());
                 }
                 else
                 {
@@ -277,26 +277,6 @@ namespace OpenSoftware.OptionParsing
             sw.Write(line);
             var s = sw.ToString();
             return s;
-        }
-    }
-
-    public class SyntaxErrorException : Exception
-    {
-        public SyntaxErrorException(string message) : base(message)
-        {
-        }
-
-        public SyntaxErrorException(string message, Exception innerException)
-            : base(message, innerException)
-        {
-        }
-    }
-
-    public class InvalidOptionValueException : Exception
-    {
-        public InvalidOptionValueException(string message)
-            : base(message)
-        {
         }
     }
 }

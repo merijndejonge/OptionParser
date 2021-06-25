@@ -8,7 +8,7 @@
         public string Path
         {
             get => Value;
-            internal set => Value = value;
+            internal set => RawValue = value;
         }
     }
 }

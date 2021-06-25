@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenSoftware.OptionParsing;
 
@@ -26,9 +25,9 @@ namespace OptionParsing.Tests
         {
             var options = new ListOptionParser();
 
-            var int1 = 1;
-            var int2 = 2;
-            var int3 = 3;
+            const int int1 = 1;
+            const int int2 = 2;
+            const int int3 = 3;
             
             var args = string.Join(",", int1, int2, int3);
             options.Parse("--int", args);

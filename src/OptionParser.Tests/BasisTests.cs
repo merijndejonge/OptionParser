@@ -101,5 +101,13 @@ namespace OptionParsing.Tests
             Assert.IsTrue(options.MyIntOption.IsDefined);
             Assert.IsTrue(options.MyIntOption.Value == 5);
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(SyntaxErrorException))]
+        public void TestThatWrongArgumentStringThrowsException()
+        {
+            var options = new BasicOptionParser();
+            options.Parse("-i", bool.TrueString);
+        }
     }
 }

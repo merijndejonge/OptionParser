@@ -49,7 +49,7 @@ namespace OptionParsing.Tests
             Assert.IsTrue(options.OutputFileOption.IsDefined);
             Assert.IsTrue(options.OutputFileOption.FileName == valueToTest);
 
-            const string text = "Hellow Worl!";
+            const string text = "Hello World!";
             options.OutputFileOption.Writer.WriteLine(text);
         }
 

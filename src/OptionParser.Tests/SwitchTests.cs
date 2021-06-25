@@ -34,12 +34,10 @@ namespace OptionParsing.Tests
             const SwitchOptionParser.SwitchValues valueToTest = SwitchOptionParser.SwitchValues.Value2;
 
             options.Parse(valueToTest.ToString().ToLower());
-
-            var value = options.SwitchValue;
-
-            Assert.IsFalse(options.SwitchOptionValue1.IsDefined);
+            
+            Assert.IsTrue(options.SwitchValue == valueToTest);
             Assert.IsTrue(options.SwitchOptionValue2.IsDefined);
-            Assert.IsTrue(value == valueToTest);
+            Assert.IsFalse(options.SwitchOptionValue1.IsDefined);
         }
 
         [TestMethod]

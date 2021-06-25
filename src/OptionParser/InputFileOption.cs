@@ -22,11 +22,9 @@ namespace OpenSoftware.OptionParsing
                 if(RawValue != value)
                 {
                     base.RawValue = value;
-                    if(_reader != null)
-                    {
-                        _reader.Dispose();
-                        _reader = null;
-                    }
+                    if (_reader == null) return;
+                    _reader.Dispose();
+                    _reader = null;
                 }
             }
         }
