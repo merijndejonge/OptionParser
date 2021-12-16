@@ -221,6 +221,8 @@ namespace OpenSoftware.OptionParsing
                 if(option.ShortName != null)
                     key += " (" + option.ShortName + ")";
                 var description = option.Description;
+                if (option is IEnumOption)
+                    description += GetEnumOptionValues(option);
                 if(option.Required)
                     description += " (required).";
                 if(option.DefaultValue != null)
@@ -236,6 +238,13 @@ namespace OpenSoftware.OptionParsing
                                  separator,
                                  WordWrap(line.Value, width, keyLength + separator.Length));
             }
+        }
+
+        private static string GetEnumOptionValues(Option option)
+        {
+            var type = option.GetType().GetGenericArguments();
+            var enumValues = Enum.GetValues(type[0]).OfType<object>().Select(x=>x.ToString());
+            return $" ({string.Join("|", enumValues)})".ToLowerInvariant();
         }
 
         private static string WordWrap(string str, int width, int indent)

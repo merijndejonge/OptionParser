@@ -1,6 +1,10 @@
 ﻿namespace OpenSoftware.OptionParsing
 {
-    public class EnumOption<T> : Option<T>
+    public interface IEnumOption
+    {
+    }
+
+    public class EnumOption<T> : Option<T>, IEnumOption
         where T : struct
     {
     }

@@ -25,7 +25,7 @@ namespace OpenSoftware.OptionParsing
     /// To access the selected enum value use the static method <c>SwitchOption&lt;T&gt;</c>.GetValue().
     /// </summary>
     /// <typeparam name="T">Specifies enum type that holds different switch values</typeparam>
-    public class SwitchOption<T> : EnumOption<T>, ISwitchOption
+    public class SwitchOption<T> : Option<T>, ISwitchOption
         where T : struct
     {
         public override string RawValue

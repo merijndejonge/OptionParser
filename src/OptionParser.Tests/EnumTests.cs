@@ -1,4 +1,6 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System;
+using System.IO;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenSoftware.OptionParsing;
 
 namespace OptionParsing.Tests
@@ -33,6 +35,22 @@ namespace OptionParsing.Tests
 
             Assert.IsTrue(options.EnumOption.IsDefined);
             Assert.IsTrue(options.EnumOption.Value == valueToTest);
+        }
+
+        [TestMethod]
+        public void TestEnumValueHelpText()
+        {
+            var options = new EnumOptionParser();
+
+            var sw = new StringWriter();
+
+
+            options.DisplayUsage(sw);
+
+            var helpText = sw.ToString();
+
+            Assert.IsTrue(helpText.Contains(
+                $"({EnumOptionParser.EnumOptions.Value1.ToString().ToLower()}|{EnumOptionParser.EnumOptions.Value2.ToString().ToLower()}|{EnumOptionParser.EnumOptions.Value3.ToString().ToLower()})"));
         }
 
         [TestMethod]
