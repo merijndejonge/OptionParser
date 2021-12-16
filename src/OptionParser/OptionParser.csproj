@@ -8,16 +8,16 @@
     <Company>OpenSoftware</Company>
     <Description>OptionParser is a library that deals with option parsing and option handling for command-line (CLI) programs.</Description>
     <PackageProjectUrl>https://github.com/merijndejonge/OptionParser</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/merijndejonge/OptionParser/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/merijndejonge/OptionParser.git</RepositoryUrl>
     <Copyright>Merijn de Jonge</Copyright>
     <PackageTags>cli option-parsing</PackageTags>
-    <Version>1.1.4</Version>
+    <Version>1.1.5</Version>
     <FileVersion>1.1.0.0</FileVersion>
-    <PackageVersion>1.1.7</PackageVersion>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <PackageVersion>1.1.11</PackageVersion>
     <PackageReleaseNotes>Add ListOption and GuidOption</PackageReleaseNotes>
+    <TargetFrameworks>net5.0;netstandard2.1</TargetFrameworks>
   </PropertyGroup>
 
   <ItemGroup>
