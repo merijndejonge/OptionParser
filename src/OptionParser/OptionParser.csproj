@@ -15,9 +15,9 @@
     <PackageTags>cli option-parsing</PackageTags>
     <Version>1.1.5</Version>
     <FileVersion>1.1.0.0</FileVersion>
-    <PackageVersion>1.1.11</PackageVersion>
+    <PackageVersion>1.1.12</PackageVersion>
     <PackageReleaseNotes>Add ListOption and GuidOption</PackageReleaseNotes>
-    <TargetFrameworks>net5.0;netstandard2.1</TargetFrameworks>
+    <TargetFrameworks>net6.0;netstandard2.1</TargetFrameworks>
   </PropertyGroup>
 
   <ItemGroup>
